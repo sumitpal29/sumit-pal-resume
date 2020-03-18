@@ -1,22 +1,99 @@
-@import './reset.scss';
+@import "./reset.scss";
+@import "./colors.scss";
 
-$black: #1b262c;
-$brand-colot: #ffe75e;
-$primary-bg: #fffdf9;
-$secondary-bg: #f1f3f4;
-
-$orange: #ff6f5e;
-$green: #00918e;
-$green-light: #7fcd91;
-$blue: #4f98ca;
-$yellow: #ffdc34;
-
-
-*{
-    color: $black;
-    background-color: $primary-bg;
+.main-layout {
+  color: $black;
+  background-color: $primary-bg;
 }
 
-.card{
+.container {
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
+  $large-width: 1440px;
+  margin: 0 auto;
+  @mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+      max-width: 700px;
+    }
+  }
+
+  @mixin desktop {
+    @media (min-width: #{$desktop-width})  and (max-width: #{$large-width - 1px}) {
+      max-width: 940px;
+    }
+  }
+
+  @media (min-width: #{$large-width}) {
+    max-width: 1200px;
+  }
+}
+
+.header {
+  width: 100%;
+  background-color: $brand-color;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+
+  .card-body {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: end;
+    padding: 30px 0;
+
+    &__image {
+      margin: 0 40px;
+      width: 250px;
+      height: 250px;
+      border: 4px solid #fff;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2),
+        -2px -2px 8px rgba(255, 249, 206, 0.2);
+    }
+
+    &__content {
+      h1 {
+        margin: 0;
+        span {
+          display: block;
+          text-transform: uppercase;
+        }
+
+        span.text-muted {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  font-size: 16px !important;
+  color: #5e5e5e;
+  letter-spacing: 5px;
+}
+
+.text-name {
+  font-size: 48px;
+  letter-spacing: 10px;
 }
