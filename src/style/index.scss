@@ -1,5 +1,6 @@
 @import "./reset.scss";
 @import "./colors.scss";
+@import "./background.scss";
 
 .main-layout {
   color: $black;
@@ -49,7 +50,7 @@
       height: 250px;
       border: 4px solid #fff;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2),
-        -2px -2px 8px rgba(255, 249, 206, 0.2);
+        -2px -2px 8px rgba(255, 249, 206, 0.9);
     }
 
     &__content {
@@ -68,6 +69,7 @@
   }
 
   .card-footer {
+    padding-bottom: 20px;
     ul {
       list-style: none;
       padding: 0;
@@ -79,6 +81,49 @@
         margin: 0 10px;
       }
     }
+  }
+}
+
+footer {
+  background-color: $brand-color;
+  p {
+    padding: 10px 60px;
+    margin: 0;
+  }
+}
+
+section {
+  .content {
+    padding: 60px 60px 20px 60px;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      li {
+        position: relative;
+        &::after{
+          content: '';
+          height: 100%;
+          width: 2px;
+          background-color: #a0a0a0a7;
+          position: absolute;
+          left: -16px;
+          top: 21px;
+        }
+
+        &:last-child{
+          &::after{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.parallex-image-class{
+  img{
+    max-height: 400px;
   }
 }
 
@@ -96,4 +141,11 @@
 .text-name {
   font-size: 48px;
   letter-spacing: 10px;
+}
+
+.light-white{
+  background-color: $secondary-bg;
+  .content-box{
+    order:2;
+  }
 }
