@@ -32,11 +32,13 @@ class section extends React.Component {
       ),
     }
     const getKeys = _obj => (typeof _obj === "object" ? Object.keys(_obj) : [])
+
     const genrateKey = id =>
       Date.now().toString(36) +
       Math.random()
         .toString(36)
         .substr(2, 10)+`_${id}`
+
     const constructDOM = _datum => {
       const items = []
       const getDOMItems = section => {
