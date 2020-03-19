@@ -1,5 +1,5 @@
 import React from "react"
-import { Parallax } from "react-scroll-parallax"
+// import { Parallax } from "react-scroll-parallax"
 
 class ParallaxImage extends React.Component {
   imageUrl = this.props.imageName || `percentages.svg`

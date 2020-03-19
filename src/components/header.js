@@ -16,10 +16,7 @@ const header = () => {
         <div className="card-header "></div>
         <div className="card-body">
           <div className="card-body__image round">
-            <img
-              src={`../../sumit-pal.jpg`}
-              alt="Sumit Pal - profile picture - web developer"
-            />
+            <img src={`../../sumit-pal.jpg`} alt="Sumit Pal - web developer" />
           </div>
           <div className="card-body__content">
             <h1>
@@ -30,14 +27,28 @@ const header = () => {
           </div>
         </div>
       </div>
-      <Sticky onStateChange={handleStateChange} innerZ="99">
+      <Sticky
+        onStateChange={handleStateChange}
+        activeClass="show-name"
+        innerZ="99"
+      >
         <nav className="card-footer">
           <div className="container">
+            <span>Sumit Pal</span>
             <ul>
-              <li><a href="#experience" >Experience</a></li>
-              <li><a href="#skills" >Skills</a></li>
-              <li><a href="#education" >Education</a></li>
-              <li><a href="#contact" >Contact</a></li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#experience">Experience</a>
+              </li>
+
+              <li>
+                <a href="#education">Education</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </div>
         </nav>
