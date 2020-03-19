@@ -27,6 +27,11 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon_instagram {
+  &:before {
+    content: $icon_instagram; 
+  }
+}
 .icon_mail {
   &:before {
     content: $icon_mail; 

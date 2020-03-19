@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Section from "../components/section"
 import ContactSection from "../components/contact-form"
-// import { ParallaxProvider } from "react-scroll-parallax"
+import Social from "../components/social"
 
 class homepage extends React.Component {
   state = {
@@ -107,6 +107,7 @@ class homepage extends React.Component {
       <Layout>
         {this.getSections()}
         <ContactSection />
+        <Social />
       </Layout>
     )
   }

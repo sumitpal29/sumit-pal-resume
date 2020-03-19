@@ -2,7 +2,7 @@ import React from "react"
 import ContactForm from "../forms/contactme"
 
 const contactFormSection = () => (
-  <section id="conatct" className="contact-me-section">
+  <section id="conatct" className="contact-me-section ">
     <div className="form-conatiner">
       <div className="container">
         <p className="container-message">I am always excited to work on some awesome projects, message me and let's discuss over coffee.</p>
