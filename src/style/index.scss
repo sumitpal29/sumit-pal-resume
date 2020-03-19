@@ -29,13 +29,17 @@
   }
 }
 
-.header {
-  width: 100%;
-  background-color: $brand-color;
+.no-user-select {
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
+}
+
+.header {
+  @extend .no-user-select;
+  width: 100%;
+  background-color: $brand-color;
 
   .card-body {
     display: flex;
@@ -93,16 +97,55 @@ footer {
 }
 
 section {
+  @extend .no-user-select;
   .content {
-    padding: 60px 60px 20px 60px;
+    padding: 60px 60px 80px 60px;
     display: flex;
     justify-content: space-between;
+
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      color: $mid-black;
+    }
+
+    h4 {
+      color: $dark-blue;
+    }
+
+    h4 ~ h3 {
+      margin-top: 30px;
+    }
+
+    h2 ~ h5 {
+      margin-top: -15px;
+    }
+
+    h5 ~ h4 {
+      margin-top: -0.5rem;
+    }
+
+    h5 {
+      color: $light-black;
+    }
+
+    .content-image {
+      display: flex;
+      align-items: center;
+      margin: 0 40px;
+      img {
+        height: 325px;
+      }
+    }
 
     ul {
       li {
         position: relative;
-        &::after{
-          content: '';
+        &::after {
+          content: "";
           height: 100%;
           width: 2px;
           background-color: #a0a0a0a7;
@@ -111,8 +154,8 @@ section {
           top: 21px;
         }
 
-        &:last-child{
-          &::after{
+        &:last-child {
+          &::after {
             display: none;
           }
         }
@@ -121,8 +164,8 @@ section {
   }
 }
 
-.parallex-image-class{
-  img{
+.parallex-image-class {
+  img {
     max-height: 400px;
   }
 }
@@ -143,9 +186,155 @@ section {
   letter-spacing: 10px;
 }
 
-.light-white{
-  background-color: $secondary-bg;
-  .content-box{
-    order:2;
+.light-white {
+  background-color: $terciary-bg;
+  .content-box {
+    order: 2;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: box-shadow ease-in-out 0.35s;
+  border: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: none;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2),
+      -2px -2px 8px rgba(255, 249, 206, 0.9);
+  }
+
+  &-primary {
+    background-color: $brand-color;
+
+    &__orange {
+      background-color: $orange;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+/* contact-form-wrapper */
+.contact-form-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 50px 30px;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.17);
+  z-index: 1;
+  background-color: $white;
+
+  button,
+  input,
+  textarea {
+    min-width: 250px;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  h4 {
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    position: relative;
+
+    label {
+      position: absolute;
+      background: $white;
+      padding: 0 3px;
+      top: 7px;
+      left: 10px;
+      font-size: 12px;
+
+      &.active {
+        font-size: 10px;
+        top: -13px;
+        left: 10px;
+      }
+    }
+  }
+}
+
+/* basic input elements */
+input[type="text"],
+textarea {
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Form Container */
+.form-conatiner {
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+
+  .container-message {
+    position: absolute;
+    max-width: 320px;
+    text-align: left;
+    height: 120px;
+    margin-top: -60px;
+    top: 50%;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .container {
+    position: relative;
+    .contact-form-svg {
+      height: 300px;
+      position: absolute;
+      right: 60px;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgb(255, 215, 42);
+    background: -moz-radial-gradient(
+      circle,
+      rgba(255, 215, 42, 1) 0%,
+      rgba(246, 238, 12, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+      circle,
+      rgba(255, 215, 42, 1) 0%,
+      rgba(246, 238, 12, 1) 100%
+    );
+    background: radial-gradient(
+      circle,
+      rgba(255, 215, 42, 1) 0%,
+      rgba(246, 238, 12, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd72a",endColorstr="#f6ee0c",GradientType=1);
+    z-index: 0;
   }
 }
