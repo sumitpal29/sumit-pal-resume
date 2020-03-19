@@ -34,10 +34,10 @@ const header = () => {
         <nav className="card-footer">
           <div className="container">
             <ul>
-              <li>Experience</li>
-              <li>Skills</li>
-              <li>Education</li>
-              <li>Social</li>
+              <li><a href="#experience" >Experience</a></li>
+              <li><a href="#skills" >Skills</a></li>
+              <li><a href="#education" >Education</a></li>
+              <li><a href="#contact" >Contact</a></li>
             </ul>
           </div>
         </nav>
