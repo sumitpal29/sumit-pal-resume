@@ -14,12 +14,15 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^7.12.0",
     "gatsby": "^2.19.45",
+    "gatsby-plugin-config": "^1.0.7",
+    "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-sass": "^2.1.31",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scroll-parallax": "^2.3.2",
     "react-stickynode": "^2.1.1"
   },
   "devDependencies": {

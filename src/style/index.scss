@@ -21,7 +21,7 @@ body {
   $desktop-width: 1024px;
   $large-width: 1440px;
   margin: 0 auto;
-  
+
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     max-width: 700px;
   }
