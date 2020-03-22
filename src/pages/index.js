@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Section from "../components/section"
 import ContactSection from "../components/contact-form"
 import Social from "../components/social"
+import Head from "../components/head"
 
 class homepage extends React.Component {
   state = {
@@ -96,7 +97,11 @@ class homepage extends React.Component {
     return this.state.sections.map((section, i) => {
       // return <ParallaxProvider><Section sectionData={section} classData={i%2 && 'light-white'}/></ParallaxProvider>
       return (
-        <Section key={`section_${i}`} sectionData={section} classData={i % 2 && "light-white"} />
+        <Section
+          key={`section_${i}`}
+          sectionData={section}
+          classData={i % 2 && "light-white"}
+        />
       )
     })
   }
@@ -105,6 +110,7 @@ class homepage extends React.Component {
     this.getSections()
     return (
       <Layout>
+        <Head title="Sumit Pal | Profile | Resume" />
         {this.getSections()}
         <ContactSection />
         <Social />

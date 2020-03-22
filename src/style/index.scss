@@ -192,6 +192,8 @@ section {
     }
 
     ul {
+      list-style: none;
+
       li {
         position: relative;
         &::after {
@@ -201,13 +203,26 @@ section {
           background-color: #a0a0a0a7;
           position: absolute;
           left: -16px;
-          top: 21px;
+          top: 20px;
         }
 
         &:last-child {
           &::after {
             display: none;
           }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 7px;
+          left: -20px;
+          background: transparent;
+          box-shadow: 0 2px 4px rgba(62, 57, 107, 0.66);
+          background-color: $brand-color;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
         }
       }
     }
@@ -327,9 +342,22 @@ section {
     }
   }
 }
+.shadow {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.17);
+}
+/* Feedback msg */
+.feedback-box {
+  @extend .shadow;
+  background-color: $primary-bg;
+  padding: 20px 40px;
+  max-width: 300px;
+  margin: 100px auto;
+  border-radius: 8px;
+}
 
 /* contact-form-wrapper */
 .contact-form-wrapper {
+  @extend .shadow;
   position: relative;
   margin: 0;
   padding: 50px 30px;
@@ -387,6 +415,21 @@ textarea {
   }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  color: $black;
+  background-color: $primary-bg;
+  box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+  // transition: background-color 5000s ease-in-out 0s;
+}
 /* Form Container */
 .form-conatiner {
   padding: 80px 0;
@@ -406,10 +449,18 @@ textarea {
 
   .container {
     position: relative;
+    display: flex;
+    align-items: center;
+
     .contact-form-svg {
       height: 300px;
       position: absolute;
       right: 60px;
+      top: 0;
+    }
+
+    .form {
+      width: 100%;
     }
   }
   &::before {
@@ -437,5 +488,17 @@ textarea {
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd72a",endColorstr="#f6ee0c",GradientType=1);
     z-index: 0;
+  }
+}
+
+.error {
+  border: 1px solid $orange;
+  .error-msg {
+    display: block;
+    font-size: 10px;
+    position: absolute;
+    bottom: 8px;
+    right: 30px;
+    color: $orange;
   }
 }

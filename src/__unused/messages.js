@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import Layout from "../components/authLayout"
 import { useFirebase } from "../firebase/firebase-context"
 
-const LandingPage = () => {
+const AllMessages = () => {
   const [user, setUser] = useState([])
 
   useFirebase(firebase => {
@@ -16,19 +16,19 @@ const LandingPage = () => {
   }, [])
 
   return (
-    <p>
+    <ul>
       Hello{" "}
       {user.length
-        ? user.map(data => (
-            <p>{`name: ${data.name}, email: ${data.email}, comment: ${data.message}`}</p>
+        ? user.map((data, key) => (
+            <li key={key}>{`name: ${data.name}, email: ${data.email}, comment: ${data.message}`}</li>
           ))
         : "there"}
-    </p>
+    </ul>
   )
 }
 
 export default () => (
   <Layout>
-    <LandingPage />
+    <AllMessages />
   </Layout>
 )

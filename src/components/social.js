@@ -8,14 +8,14 @@ export const social = () => {
           <img src="../../social.svg" alt="Sumit's social life" />
         </div>
         <div className="content-box">
-            <h2>Find Me</h2>
-            <p>I love cinematography and photography, so you can find me and my creations over here</p>
+            <h2>Social</h2>
+            <p><b>Cinematography</b> and <b>Photography</b> are one of my hobbies, so definitely checkout my creative contents over here. </p>
             <div className="icon-container">
                 <a rel="noopener noreferrer" href="https://www.youtube.com/c/sumitpal" target="_blank"><i className="icon_youtube"></i></a>
                 <a rel="noopener noreferrer" href="https://www.instagram.com/sumitpal.29/?hl=en" target="_blank"><i className="icon_instagram"></i></a>
             </div>
             
-            <p>You can find me below this places</p>
+            <p>Social Network</p>
             <div className="icon-container">
                 <a rel="noopener noreferrer" href="https://www.facebook.com/sumitwithyou" target="_blank"><i className="icon_facebook"></i></a>
                 <a rel="noopener noreferrer" href="https://twitter.com/sumitpal29" target="_blank"><i className="icon_twitter"></i></a>
