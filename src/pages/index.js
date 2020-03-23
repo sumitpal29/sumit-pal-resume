@@ -37,7 +37,8 @@ class homepage extends React.Component {
               {
                 h3: "Contributions",
                 list: [
-                  "Build FusionCharts design system",
+                  "Build FusionCharts Design System",
+                  "Managed FusionCharts web applications",
                   "Frontend architechture for FusionCharts Web applications",
                   "FusionStore as chart store",
                   "Implemented visual regression on web for consistent and pixel perfect deployments",

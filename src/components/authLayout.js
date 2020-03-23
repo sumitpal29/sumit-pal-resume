@@ -6,6 +6,7 @@ function Index({ children }) {
 
   React.useEffect(() => {
     if (!firebase && typeof window !== "undefined") {
+      
       const app = import("firebase/app")
       const database = import("firebase/database")
       const firestore = import("firebase/firestore")
@@ -20,7 +21,7 @@ function Index({ children }) {
             projectId: process.env.GATSBY_PROJECT_ID,
             storageBucket: process.env.GATSBY_STORAGE_BUCKET,
             messagingSenderId: process.env.GATSBY_MESSAGING_SENDER_ID,
-            appId: process.env.APPID,
+            appId: process.env.GATSBY_APPID,
           })
         }
 

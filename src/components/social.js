@@ -15,7 +15,7 @@ export const social = () => {
                 <a rel="noopener noreferrer" href="https://www.instagram.com/sumitpal.29/?hl=en" target="_blank"><i className="icon_instagram"></i></a>
             </div>
             
-            <p>Social Network</p>
+            <p>Also, you can find me on below places</p>
             <div className="icon-container">
                 <a rel="noopener noreferrer" href="https://www.facebook.com/sumitwithyou" target="_blank"><i className="icon_facebook"></i></a>
                 <a rel="noopener noreferrer" href="https://twitter.com/sumitpal29" target="_blank"><i className="icon_twitter"></i></a>
