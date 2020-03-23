@@ -74,7 +74,7 @@ class homepage extends React.Component {
         imageName: "certificate.svg",
       },
       {
-        h2: "Hire me. Why?",
+        h2: "Hire me",
         list: [
           "Have more than 3 years’ of experience in a professional development environment.",
           "Have planned and implemented entire projects from design to launch.",
