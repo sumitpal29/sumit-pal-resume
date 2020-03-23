@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.sumitpal.in" style="border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 0 2px 2px rgba(0,0,0,0.2); width: 100px; height: 100px;">
+  <a target="_blank" href="https://www.sumitpal.in">
     <img alt="Gatsby" src="https://www.sumitpal.in/sumit-pal.jpg" width="100" height="100" />
   </a>
 </p>
