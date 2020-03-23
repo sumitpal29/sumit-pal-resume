@@ -11,6 +11,11 @@
 A static site for building Resume and blogs.
 Using _Firebase_ for hosting and maintaining database
 
+## Implemented
+  - Resume profile with scss
+  - Firebase context using firebase inside Gatsby
+  - Record messages from visitor using Firebase Firestore
+
 ## 🧐 Todo
 
  - _Firebase Auth_ so that only admin can access the messages posted by visitors
