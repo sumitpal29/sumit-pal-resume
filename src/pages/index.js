@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Section from "../components/section"
 import ContactSection from "../components/contact-form"
 import Social from "../components/social"
+import Head from "../components/head"
 
 class homepage extends React.Component {
   state = {
@@ -36,7 +37,8 @@ class homepage extends React.Component {
               {
                 h3: "Contributions",
                 list: [
-                  "Build FusionCharts design system",
+                  "Build FusionCharts Design System",
+                  "Managed FusionCharts web applications",
                   "Frontend architechture for FusionCharts Web applications",
                   "FusionStore as chart store",
                   "Implemented visual regression on web for consistent and pixel perfect deployments",
@@ -75,7 +77,7 @@ class homepage extends React.Component {
       {
         h2: "Hire me",
         list: [
-          "More than 3 years’ of experience in a professional development environment.",
+          "Have more than 3 years’ of experience in a professional development environment.",
           "Have planned and implemented entire projects from design to launch.",
           "Worked on collaborative projects with designers, developers and Product managers.",
           "Build experiences using modern best practices for performance, accessibility and browser compatibility.",
@@ -96,7 +98,11 @@ class homepage extends React.Component {
     return this.state.sections.map((section, i) => {
       // return <ParallaxProvider><Section sectionData={section} classData={i%2 && 'light-white'}/></ParallaxProvider>
       return (
-        <Section sectionData={section} classData={i % 2 && "light-white"} />
+        <Section
+          key={`section_${i}`}
+          sectionData={section}
+          classData={i % 2 && "light-white"}
+        />
       )
     })
   }
@@ -105,6 +111,7 @@ class homepage extends React.Component {
     this.getSections()
     return (
       <Layout>
+        <Head title="Sumit Pal | Profile | Resume" />
         {this.getSections()}
         <ContactSection />
         <Social />
