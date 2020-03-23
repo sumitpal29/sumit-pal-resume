@@ -3,6 +3,10 @@
 @import "./background.scss";
 @import "./custom-fonts.scss";
 
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$large-width: 1440px;
+
 .main-layout {
   color: $black;
   background-color: $primary-bg;
@@ -16,10 +20,97 @@ body {
   background-color: $brand-color;
 }
 
+.no-user-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  font-size: 16px !important;
+  color: #5e5e5e;
+  letter-spacing: 5px;
+}
+
+.text-name {
+  font-size: 48px;
+  letter-spacing: 10px;
+}
+
+/* basic input elements */
+input[type="text"],
+textarea {
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  color: $black;
+  background-color: $primary-bg;
+  box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+  // transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+  transition: box-shadow ease-in-out 0.35s;
+  border: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: none;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2),
+      -2px -2px 8px rgba(255, 249, 206, 0.9);
+  }
+
+  &-primary {
+    background-color: $brand-color;
+
+    &__orange {
+      background-color: $orange;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+/* Default shadow property */
+.shadow {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.17);
+}
+
 .container {
-  $tablet-width: 768px;
-  $desktop-width: 1024px;
-  $large-width: 1440px;
   margin: 0 auto;
 
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
@@ -33,13 +124,43 @@ body {
   @media (min-width: #{$large-width}) {
     max-width: 1200px;
   }
-}
 
-.no-user-select {
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
+  @media (max-width: #{$desktop-width}) {
+    flex-direction: column;
+    .card-body {
+      flex-direction: column;
+      &__image {
+        margin-bottom: 40px !important;
+      }
+      &__content {
+        text-align: center;
+      }
+    }
+
+    & > span {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      justify-content: center !important;
+    }
+
+    .content {
+      &-box {
+        width: 100%;
+        button {
+          width: 100%;
+        }
+      }
+      &-image {
+        order: -1;
+        img {
+          max-height: 200px;
+        }
+      }
+    }
+  }
 }
 
 .header {
@@ -254,14 +375,14 @@ section {
         background: #ffffff;
         text-align: center;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2),
-          -2px -2px 8px rgba(255, 249, 206, 0.9);
+          -2px -2px 8px rgba(255, 249, 206, 1);
         vertical-align: middle;
         line-height: 54px;
         transition: box-shadow ease-in-out 0.35s;
 
-        &:hover{
-          box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4),
-          -2px -3px 10px rgba(255, 249, 206, 0.9);
+        &:hover {
+          box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3),
+            -2px -3px 10px rgb(255, 247, 190);
         }
 
         i {
@@ -289,7 +410,7 @@ section {
           color: #2867b2;
         }
 
-        .icon_github{
+        .icon_github {
           color: $black;
         }
       }
@@ -303,22 +424,6 @@ section {
   }
 }
 
-.round {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.text-muted {
-  font-size: 16px !important;
-  color: #5e5e5e;
-  letter-spacing: 5px;
-}
-
-.text-name {
-  font-size: 48px;
-  letter-spacing: 10px;
-}
-
 .light-white {
   background-color: $terciary-bg;
   .content-box {
@@ -326,41 +431,6 @@ section {
   }
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  font-weight: 600;
-  transition: box-shadow ease-in-out 0.35s;
-  border: none;
-
-  &:focus,
-  &:active {
-    outline: none;
-    border: none;
-  }
-
-  &:hover {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2),
-      -2px -2px 8px rgba(255, 249, 206, 0.9);
-  }
-
-  &-primary {
-    background-color: $brand-color;
-
-    &__orange {
-      background-color: $orange;
-      color: #fff;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-.shadow {
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.17);
-}
 /* Feedback msg */
 .feedback-box {
   @extend .shadow;
@@ -382,6 +452,7 @@ section {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.17);
   z-index: 1;
   background-color: $white;
+  transition: box-shadow ease 0.35s;
 
   button,
   input,
@@ -417,35 +488,6 @@ section {
   }
 }
 
-/* basic input elements */
-input[type="text"],
-textarea {
-  padding: 5px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  margin-bottom: 20px;
-  font-size: 12px;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  color: $black;
-  background-color: $primary-bg;
-  box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
-  // transition: background-color 5000s ease-in-out 0s;
-}
 /* Form Container */
 .form-conatiner {
   padding: 80px 0;
@@ -479,6 +521,7 @@ select:-webkit-autofill:focus {
       width: 100%;
     }
   }
+  /* before element used as background */
   &::before {
     content: "";
     position: absolute;
@@ -505,13 +548,33 @@ select:-webkit-autofill:focus {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd72a",endColorstr="#f6ee0c",GradientType=1);
     z-index: 0;
   }
+
+  @media (max-width: #{$desktop-width}) {
+    overflow: hidden;
+    &::before{
+      transform: scale(1.8) rotate(5deg) ;
+      height: 50%;
+      width: 100%;
+    }
+    img{
+      position: relative !important;
+      margin-top: 10px;
+      right: inherit !important;
+      order: -1;
+    }
+    p{
+      display: none;
+    }
+  }
+
 }
 
 .error {
-  border: 1px solid $orange;
+  box-shadow: 0 0 12px 1px $orange;
   .error-msg {
     display: block;
     font-size: 10px;
+    font-weight: bold;
     position: absolute;
     bottom: 8px;
     right: 30px;
