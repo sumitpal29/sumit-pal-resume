@@ -13,11 +13,11 @@ Using _Firebase_ for hosting and maintaining database
 
 ## 🧐 Todo
 
-[] _Firebase Auth_ so that only admin can access the messages posted by visitors
-[] Gatsby-plugin-image for smoother loading images
-[] Content render from markdown using graphql
-[] Blog - Author can Add/upate/delete blog posts
-[] Comment feature for registered users + guest feature
+ - _Firebase Auth_ so that only admin can access the messages posted by visitors
+ - Gatsby-plugin-image for smoother loading images
+ - Content render from markdown using graphql
+ - Blog - Author can Add/upate/delete blog posts
+ - Comment feature for registered users + guest feature
 
 ## 🚀 Quick start
 
