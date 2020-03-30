@@ -18,7 +18,7 @@ class section extends React.Component {
         </ul>
       ),
       button: (_data, k) => (
-        <form key={`form_${k}`} method="get" action="../../Sumit-Pal-Resume-2020.pdf">
+        <form key={`form_${k}`} method="get" action="../../Sumit-Pal-Resume.pdf">
           <button
             className={`btn ${_data.type}`}
             type="submit"
