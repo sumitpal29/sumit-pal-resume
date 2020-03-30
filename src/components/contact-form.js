@@ -8,8 +8,8 @@ const contactFormSection = () => {
       <div className="form-conatiner">
         <div className="container">
           <p className="container-message">
-            I am always excited to work on some awesome projects, message me and
-            let's discuss over coffee.
+            I love a good chat about all some awesome projects, products and innovations. 
+            Call, email, come round for a coffee, or just stalk me on social media. Let's talk!
           </p>
           <ContactForm />
           <img

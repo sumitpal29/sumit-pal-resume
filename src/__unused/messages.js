@@ -20,7 +20,7 @@ const AllMessages = () => {
       Hello{" "}
       {user.length
         ? user.map((data, key) => (
-            <li key={key}>{`name: ${data.name}, email: ${data.email}, comment: ${data.message}`}</li>
+            <li key={`data_${key}`}>{`name: ${data.name}, email: ${data.email}, comment: ${data.message}`}</li>
           ))
         : "there"}
     </ul>

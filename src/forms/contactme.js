@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/authLayout"
 import { useFirebase } from "../firebase/firebase-context"
+import validator from "validator"
 
 const useMessageHook = callback => {
   const _initialState = {
@@ -28,10 +29,10 @@ const useMessageHook = callback => {
     setUserMessage({ ...userMessage, ...ob })
   }
 
-  const validateEmail = mail => {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(mail).toLowerCase())
-  }
+  // const validateEmail = mail => {
+  //   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //   return re.test(String(mail).toLowerCase())
+  // }
 
   const isValidForm = () => {
     let testResult = true
@@ -39,7 +40,7 @@ const useMessageHook = callback => {
     if (userMessage.name.length < 2) {
       testResult = false
       setErrorMsg("Name length too short")
-    } else if (!validateEmail(userMessage.email)) {
+    } else if (!validator.isEmail(userMessage.email)) {
       testResult = false
       setErrorMsg("Invalid email id!!")
     } else if (userMessage.message.length < 2) {

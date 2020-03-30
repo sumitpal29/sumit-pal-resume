@@ -24,8 +24,8 @@ export default function head({ title }) {
         content="https://www.sumitpal.in/sumit-pal.jpg"
       />
       <meta property="og:url" content="http://www.sumitpal.in"></meta>
-      <meta name="twitter:card" content="Sumit Pal - NodeJs developer" />
-      <meta property="og:site_name" content="Sumit's Profile." />
+      <meta property="og:site_name" content="Sumit Pal - Web developer." />
+      <meta name="twitter:card" content="Sumit Pal - Web developer" />
       <meta name="twitter:image:alt" content="Sumit Pal" />
       <meta name="twitter:site" content="@sumitpal29"></meta>
     </Helmet>
