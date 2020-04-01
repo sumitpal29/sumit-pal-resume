@@ -15,14 +15,25 @@ const AllMessages = () => {
       })
   }, [])
 
+  const handleMessageDelete = () => {
+    alert('a')
+  }
+
   return (
-    <ul>
-      Hello{" "}
+    <ul className="messages">
       {user.length
         ? user.map((data, key) => (
-            <li key={`data_${key}`}>{`name: ${data.name}, email: ${data.email}, comment: ${data.message}`}</li>
+            <li className="shadow" key={`data_${key}`}>
+              <span onClick={handleMessageDelete} className="cross">
+                <i className="icon_cross"></i>
+              </span>
+              <h3>{data.name}</h3>
+              <h5>{data.email}</h5>
+              <p>{data.message}</p>
+              <span>{data.date}</span>
+            </li>
           ))
-        : "there"}
+        : "No Messages Yet!!"}
     </ul>
   )
 }

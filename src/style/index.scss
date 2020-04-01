@@ -498,8 +498,8 @@ section {
     position: absolute;
     max-width: 320px;
     text-align: left;
-    height: 120px;
-    margin-top: -60px;
+    height: 180px;
+    margin-top: -90px;
     top: 50%;
     font-size: 20px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -551,22 +551,21 @@ section {
 
   @media (max-width: #{$desktop-width}) {
     overflow: hidden;
-    &::before{
-      transform: scale(1.8) rotate(5deg) ;
+    &::before {
+      transform: scale(1.8) rotate(5deg);
       height: 50%;
       width: 100%;
     }
-    img{
+    img {
       position: relative !important;
       margin-top: 10px;
       right: inherit !important;
       order: -1;
     }
-    p{
+    p {
       display: none;
     }
   }
-
 }
 
 .error {
@@ -579,5 +578,53 @@ section {
     bottom: 8px;
     right: 30px;
     color: $orange;
+  }
+}
+
+.messages {
+  list-style: none;
+
+  li {
+    max-width: 700px;
+    background-color: $white;
+    padding: 10px 20px 40px 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    position: relative;
+
+    h3,
+    h5 {
+      margin-bottom: 10px;
+    }
+    h5 {
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(62, 57, 107, 0.16);
+      color: $mid-black;
+    }
+    span {
+      display: block;
+      position: absolute;
+      font-size: 12px;
+
+      &.cross {
+        right: 10px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 24px;
+        transition: color ease 0.35s, background-color ease 0.35s;
+
+        i {
+          font-size: 13px;
+        }
+
+        &:hover {
+          background-color: $light-black;
+          color: $white;
+        }
+      }
+    }
   }
 }
