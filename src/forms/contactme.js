@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Layout from "../components/authLayout"
+import AuthLayout from "../components/authLayout"
 import { useFirebase } from "../firebase/firebase-context"
 import validator from "validator"
 
@@ -154,7 +154,7 @@ const ContactMeForm = () => {
 }
 
 export default () => (
-  <Layout>
+  <AuthLayout>
     <ContactMeForm />
-  </Layout>
+  </AuthLayout>
 )

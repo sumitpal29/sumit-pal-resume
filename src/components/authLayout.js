@@ -10,8 +10,9 @@ function Index({ children }) {
       const app = import("firebase/app")
       const database = import("firebase/database")
       const firestore = import("firebase/firestore")
+      const auth = import("firebase/auth")
 
-      Promise.all([app, database, firestore]).then(values => {
+      Promise.all([app, database, firestore, auth]).then(values => {
         const firebaseInstance = values[0]
         if (!firebaseInstance.apps.length) {
           firebaseInstance.initializeApp({

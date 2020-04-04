@@ -29,6 +29,7 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {
+    "eslint-plugin-react-hooks": "^3.0.0",
     "prettier": "^1.19.1"
   },
   "repository": {
